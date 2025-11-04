@@ -1,8 +1,4 @@
 streamlit
 openai
-pypdf
-supabase
+gtts
 python-dotenv
-sentence-transformers
-faiss-cpu
-streamlit-audiorecorder
