@@ -3,7 +3,6 @@ import io
 import openai
 import os
 from dotenv import load_dotenv
-from audiorecorder import audiorecorder # Para gravar a voz (STT)
 
 # ======================
 # CONFIGURAÇÃO INICIAL
@@ -203,7 +202,12 @@ with col2:
     div[data-testid="stAudioRecorder"] > button > svg { width: 60%; height: 60%; }
     </style>
     """, unsafe_allow_html=True)
-    audio_bytes = audiorecorder(pause_threshold=2.0, key="recorder")
+    audio_bytes = st.audio_input("Grave sua voz")
+
+    if audio_bytes is not None:
+        st.audio(audio_bytes)
+        with open("audio_user.wav", "wb") as f:
+            f.write(audio_bytes.getbuffer())
 
 # Processa a entrada de voz
 if audio_bytes:
