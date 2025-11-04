@@ -1,0 +1,13 @@
+python-version = "3.11"
+
+# Pacotes Python
+streamlit
+openai
+pypdf
+supabase
+python-dotenv
+sentence-transformers
+faiss-cpu
+streamlit-audiorecorder
+pydub
+PyAudio
